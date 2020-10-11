@@ -3,11 +3,15 @@ toparse = ""
 line_list = toparse.split("\n")
 space_tokenlist = toparse.split(" ")
 
-
+# Unclear, or not fully/easily visible will be commented.
 symbol_splitters = [
-    ":=", "+", "-", "*", "%", "/", "**", # Math operators.
+    ":=", "+", "-", "*", "%", "/", "**", 
     "(", ")", "\"", "'", "[", "]" # Parantheses, quotes, and []
-    "==", "!=", ">=", "<=", ">", "<"
+    "==", "!=", ">=", "<=", ">", "<",
+    ":", "1", "2", "3", "4", "5", "6", "7", "8"
+]
+
+keyword_splitters = []
 token_splitters = []
 
 
