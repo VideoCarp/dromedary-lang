@@ -42,10 +42,10 @@ def space_behind(count=1):
     return space_tokenlist[space_tokenlist.index(space_token) - count]
 
 def token_front(count=1):
-    return lex_token[lex_token.index(token) + count]
+    return lex_token[lex_token.index(token) + count].replace(" ", "")
 
 def token_behind(count=1):
-    return lex_token[lex_token.index(token) - count]
+    return lex_token[lex_token.index(token) - count].replace(" ", "")
 
 def str_token():
     return_value = False
@@ -55,7 +55,7 @@ for line in line_list:
     for space_token in space_tokenlist:
         for token in lex_token:
             if str_token() == False:
-                if token == ":=": token_splitters.append(token_behind().replace(" ", ""))
-                if token == "func": token_splitters.append(token_front().replace(" ", ""))
+                if token == ":=": token_splitters.append(token_behind())
+                if token == "func": token_splitters.append(token_front())
 
 print("\n".join(result))
