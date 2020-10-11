@@ -2,7 +2,12 @@
 toparse = ""
 line_list = toparse.split("\n")
 space_tokenlist = toparse.split(" ")
+
+
+symbol_splitters = [":=", "+", "-", "*", "%", "^"]
 token_splitters = []
+
+
 for token_splitter in token_splitters:
     tok = toparse.replace(token_splitter, "TOKEN_SPLIT")
 lex_token = tok.split("TOKEN_SPLIT")
