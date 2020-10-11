@@ -4,7 +4,10 @@ line_list = toparse.split("\n")
 space_tokenlist = toparse.split(" ")
 
 
-symbol_splitters = [":=", "+", "-", "*", "%", "^"]
+symbol_splitters = [
+    ":=", "+", "-", "*", "%", "/", "**", # Math operators.
+    "(", ")", "\"", "'", "[", "]" # Parantheses, quotes, and []
+    "==", "!=", ">=", "<=", ">", "<"
 token_splitters = []
 
 
