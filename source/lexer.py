@@ -51,9 +51,7 @@ result = []
 for line in line_list:
     for space_token in space_tokenlist:
         for token in lex_token:
-            if token == ":=": token_splitters.append(token_behind())
-            if token == "func":
-                result.append(token_front(2).replace(")", ":")
-                token_splitters.append(token_front())
+            if token == ":=": token_splitters.append(token_behind().replace(" ", ""))
+            if token == "func": token_splitters.append(token_front())
 
 print("\n".join(result))
