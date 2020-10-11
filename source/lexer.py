@@ -2,7 +2,10 @@
 toparse = ""
 line_list = toparse.split("\n")
 space_tokenlist = toparse.split(" ")
-lex_token = []
+token_splitters = []
+for token_splitter in token_splitters:
+    tok = toparse.replace(token_splitter, "TOKEN_SPLIT")
+lex_token = tok.split("TOKEN_SPLIT")
 
 def line_above(count=1):
     return line_list[line_list.index(line) + count]
@@ -24,4 +27,5 @@ def token_behind(count=1):
 
 for line in line_list:
     for space_token in space_tokenlist:
-        if 
+        if ":=" in line:
+            token_splitters.append(str(space_behind()))
