@@ -4,6 +4,7 @@ line_list = toparse.split("\n")
 space_tokenlist = toparse.split(" ")
 
 token_splitters = []
+
 # Unclear, or not fully/easily visible will be commented.
 symbol_splitters = [
     ":=", "+", "-", "*", "%", "/", "**", 
@@ -15,13 +16,13 @@ symbol_splitters = [
 keyword_splitters = [
     "if", "while", "for", "elif", "else",
     "and", "or", "not", "is", "is not",
-    "false", "true", "null", "pass"
+    "false", "true", "null", "pass", "fn"
 ]
+
 for ks in keyword_splitters:
     token_splitters.append(ks)
 for ss in symbol_splitters:
     token_splitters.append(ss)
-
 
 
 for token_splitter in token_splitters:
@@ -46,7 +47,13 @@ def token_front(count=1):
 def token_behind(count=1):
     return lex_token[lex_token.index(token) - count]
 
+result = []
 for line in line_list:
     for space_token in space_tokenlist:
-        if ":=" in line:
-            token_splitters.append(str(space_behind()))
+        for token in lex_token:
+            if token == ":=": token_splitters.append(token_behind())
+            if token == "func":
+                result.append(token_front(2).replace(")", ":")
+                token_splitters.append(token_front())
+
+print("\n".join(result))
