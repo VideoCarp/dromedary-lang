@@ -47,11 +47,15 @@ def token_front(count=1):
 def token_behind(count=1):
     return lex_token[lex_token.index(token) - count]
 
+def str_token():
+    return_value = False
+    if token == '"' or token == "'": return_value = True
 result = []
 for line in line_list:
     for space_token in space_tokenlist:
         for token in lex_token:
-            if token == ":=": token_splitters.append(token_behind().replace(" ", ""))
-            if token == "func": token_splitters.append(token_front())
+            if str_token() == False:
+                if token == ":=": token_splitters.append(token_behind().replace(" ", ""))
+                if token == "func": token_splitters.append(token_front().replace(" ", ""))
 
 print("\n".join(result))
