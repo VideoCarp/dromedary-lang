@@ -11,7 +11,10 @@ symbol_splitters = [
     ":", "1", "2", "3", "4", "5", "6", "7", "8"
 ]
 
-keyword_splitters = []
+keyword_splitters = [
+    "if", "while", "for", "elif", "else",
+    "and", "or", "not", "is", "is not",
+]
 token_splitters = []
 
 
