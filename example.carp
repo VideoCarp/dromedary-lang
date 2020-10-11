@@ -9,7 +9,7 @@ fn main()
 
 # Function definition. Separate new arguments with comma.
 fn example_func(arg)
-    out(arg)
+    print(arg)
     return arg
 
 # Comparison Operators:
