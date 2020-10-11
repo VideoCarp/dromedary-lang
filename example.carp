@@ -14,7 +14,7 @@ fn example_func(arg)
 
 # Comparison Operators:
 # != (not equal)
-# ~ (equal)
+# == (equal)
 # >= (greater than or equal to)
 # <= (smaller than or equal to)
 # > (greater than)
