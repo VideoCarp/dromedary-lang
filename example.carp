@@ -1,0 +1,47 @@
+# This is the goal of the language's syntax structure.
+# Many changes could happen, this currently will not run.
+# This program is not meant to run, is rather a simple example guide.
+import "name"
+
+# Hello World!
+fn main()
+    out("Hello, World!")
+
+# Function definition. Separate new arguments with comma.
+fn example_func(arg)
+    out(arg)
+    return arg
+
+# Comparison Operators:
+# != (not equal)
+# ~ (equal)
+# >= (greater than or equal to)
+# <= (smaller than or equal to)
+# > (greater than)
+# < (smaller than)
+if (...):
+    ...
+
+while (...):
+    ...
+
+for (...):
+    ...
+
+switch (...):
+    case ...:
+        ...
+
+my_array := [...] # comma separation.
+my_array[1]
+
+my_dict := {
+    "...": "..."
+}
+my_dict.grab(key) # get value. else key: my_dict[key]
+
+my_string := "..."
+my_string = my_string.replace("...", "#...")
+
+my_integer := 1
+my_integer = my_integer * 2 # %, *, -, sqrt(my_integer), etc.
