@@ -1,2 +1,2 @@
-# carp-lang
+# Carp-Lang
 In-progress JIT language.
