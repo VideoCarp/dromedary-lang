@@ -3,6 +3,7 @@ toparse = ""
 line_list = toparse.split("\n")
 space_tokenlist = toparse.split(" ")
 
+token_splitters = []
 # Unclear, or not fully/easily visible will be commented.
 symbol_splitters = [
     ":=", "+", "-", "*", "%", "/", "**", 
@@ -14,8 +15,13 @@ symbol_splitters = [
 keyword_splitters = [
     "if", "while", "for", "elif", "else",
     "and", "or", "not", "is", "is not",
+    "false", "true", "null", "pass"
 ]
-token_splitters = []
+for ks in keyword_splitters:
+    token_splitters.append(ks)
+for ss in symbol_splitters:
+    token_splitters.append(ss)
+
 
 
 for token_splitter in token_splitters:
