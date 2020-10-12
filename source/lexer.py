@@ -63,7 +63,7 @@ def switch(expression, cases: dict, returning=False):
 
 def token_info_get():
     for kw in keyword_splitters:
-        cases = {kw: f"KEYWORD_{kw}", ":=": "DEFINE_VAR", "fn": "DEFINE_FUNCTION,
+        cases = {kw: f"KEYWORD_{kw}", ":=": "DEFINE_VAR", "fn": "DEFINE_FUNCTION",
                      "[": "ENTER_BRACKETS", "]": "EXIT_BRACKETS", "(": "ENTER_PARAN", ")": "EXIT_PARAN",
                      "{": "ENTER_BRACES", "}": "EXIT_BRACES", ":": "COLON", "'": "STRING", '"': "STRING",
                     }
