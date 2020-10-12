@@ -5,7 +5,7 @@ import "name"
 
 # Hello World!
 fn main()
-    out("Hello, World!")
+    print("Hello, World!")
 
 # Function definition. Separate new arguments with comma.
 fn example_func(arg)
