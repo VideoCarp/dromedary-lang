@@ -53,33 +53,21 @@ def str_token():
         return True
     else:
         return False
-def switch(expression, cases: dict, ret=False):
+def switch(expression, cases: dict, returning=False):
     for k,v in cases.items():
         if expression == k:
-            if ret == True:
+            if returning == True:
                 return v
             else:
                 v()
 
 def token_info_get():
-    if token == "current":
-        for kw in keyword_splitters:
-            if token == ":=": return "ASSIGNMENT"
-            if token == "fn": return "ASSIGN_FUNCTION"
-            if token == "false" or token == "true": return "BOOLEAN"
-            if token == "(": return "ENTER_PARAN"
-            if token == ")": return "EXIT_PARAN"
-            if token == "[": return "ENTER_BRACKET"
-            if token == "]": return "EXIT_BRACKET"
-            if token == "+" or token == "-" or token == "*"\
-            or token == "%" or token == "**": return "MATH_OPERATION"
-            if token == kw: return "KEY_WORD"
-            if str_token(): return "STRING"
-    else:
-        if token_front() == ":=": return "VARIABLE"
-        if token_behind() == "fn": return "FUNCTION"
-        if token_behind() == "(": return "ENTER_PARANTHESES"
-        if token_behind() == ")": return "EXIT_PARANTHESES"
+    for kw in keyword_splitters:
+        cases = {kw: f"KEYWORD_{kw}", ":=": "DEFINE_VAR", "fn": "DEFINE_FUNCTION,
+                     "[": "ENTER_BRACKETS", "]": "EXIT_BRACKETS", "(": "ENTER_PARAN", ")": "EXIT_PARAN",
+                     "{": "ENTER_BRACES", "}": "EXIT_BRACES", ":": "COLON", "'": "STRING", '"': "STRING",
+                    }
+        return switch(token, cases, returning=True)
     
 result = []
 for line in line_list:
