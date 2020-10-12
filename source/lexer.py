@@ -73,12 +73,16 @@ def tagged_get(dist=1):
     return tagged_tokens[tagged_tokens.index(tagged_token)][dist]
 
 result = []
+def newsplitter(arg):
+    token_splitters.append(arg)
 for line in line_list:
     for space_token in space_tokenlist:
         for token in lex_token:
             for tagged_token in tagged_tokens:
                 if str_token() == False:
-                    switching_cases = {}
+                    switching_cases = {"DEFINE_VAR": lambda:newsplitter(token_behind())
+                                       "DEFINE_FUNCTION": lambda:newsplitter(token_front())
+                                      }
                     switch(tagged_get(), casevar=switching_cases, returning=False)
 
 print("\n".join(result))
