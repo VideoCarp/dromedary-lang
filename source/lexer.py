@@ -53,6 +53,10 @@ def str_token():
         return True
     else:
         return False
+def switch(expression, cases: dict):
+    for k,v in cases.items():
+        if expression == k:
+            v
 
 def token_info_get():
     if token == "current":
