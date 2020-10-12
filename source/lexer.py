@@ -49,7 +49,10 @@ def token_behind(count=1):
 
 def str_token():
     return_value = False
-    if token == '"' or token == "'": return_value = True
+    if token == '"' or token == "'": 
+        return True
+    else:
+        return False
 result = []
 for line in line_list:
     for space_token in space_tokenlist:
