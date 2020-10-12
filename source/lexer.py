@@ -53,6 +53,27 @@ def str_token():
         return True
     else:
         return False
+
+def token_info_get():
+    if token == "current":
+        for kw in keyword_splitters:
+            if token == ":=": return "ASSIGNMENT"
+            if token == "fn": return "ASSIGN_FUNCTION"
+            if token == "false" or token == "true": return "BOOLEAN"
+            if token == "(": return "ENTER_PARAN"
+            if token == ")": return "EXIT_PARAN"
+            if token == "[": return "ENTER_BRACKET"
+            if token == "]": return "EXIT_BRACKET"
+            if token == "+" or token == "-" or token == "*"\
+            or token == "%" or token == "**": return "MATH_OPERATION"
+            if token == kw: return "KEY_WORD"
+            if str_token(): return "STRING"
+    else:
+        if token_front() == ":=": return "VARIABLE"
+        if token_behind() == "fn": return "FUNCTION"
+        if token_behind() == "(": return "ENTER_PARANTHESES"
+        if token_behind() == ")": return "EXIT_PARANTHESES"
+    
 result = []
 for line in line_list:
     for space_token in space_tokenlist:
