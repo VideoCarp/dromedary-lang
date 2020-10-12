@@ -53,7 +53,7 @@ def str_token():
         return True
     else:
         return False
-def switch(expression, cases: dict, returning=False):
+def switch(expression, casevar: dict, returning=False):
     for k,v in cases.items():
         if expression == k:
             if returning == True:
@@ -61,20 +61,24 @@ def switch(expression, cases: dict, returning=False):
             else:
                 v()
 
-def token_info_get():
-    for kw in keyword_splitters:
-        cases = {kw: f"KEYWORD_{kw}", ":=": "DEFINE_VAR", "fn": "DEFINE_FUNCTION",
+
+for kw in keyword_splitters:
+    cases = {kw: f"KEYWORD_{kw}", ":=": "DEFINE_VAR", "fn": "DEFINE_FUNCTION",
                      "[": "ENTER_BRACKETS", "]": "EXIT_BRACKETS", "(": "ENTER_PARAN", ")": "EXIT_PARAN",
                      "{": "ENTER_BRACES", "}": "EXIT_BRACES", ":": "COLON", "'": "STRING", '"': "STRING",
                     }
-        return switch(token, cases, returning=True)
-    
+    tagged_tokens = switch(token, casevar=cases, returning=True)
+
+def tagged_get(dist=1):
+    return tagged_tokens[tagged_tokens.index(tagged_token)][dist]
+
 result = []
 for line in line_list:
     for space_token in space_tokenlist:
         for token in lex_token:
-            if str_token() == False:
-                if token == ":=": token_splitters.append(token_behind())
-                if token == "func": token_splitters.append(token_front())
+            for tagged_token in tagged_tokens:
+                if str_token() == False:
+                    switching_cases = {}
+                    switch(tagged_get(), casevar=switching_cases, returning=False)
 
 print("\n".join(result))
