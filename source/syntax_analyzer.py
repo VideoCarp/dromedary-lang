@@ -22,6 +22,7 @@ def mod_replace(t=token, oldvalue, newvalue, extra=False):
 def linemod(old, new):
     analyzed = analyzed.append(line.replace(old, new))
 
+
 for line in line_list:
     for token in lex_token:
         for kw in keyword_splitters:
@@ -35,9 +36,10 @@ for line in line_list:
                  Consider renaming the variable or function to an unreserved keyword.")
 
             # Analyze
-            if ":=" in line:
-                mod_replace(token == ":=" and token_behind() not in token_splitters, ":=", "=")
-            if "fn" in line:
-                mod_replace(token == "fn" and token_front() not in token_splitters, "fn", "def")
-            if "iterate" in line:
-                analyzed = analyzed.append(line.replace("
+            inline_do = {":=": lambda:mod_replace(token == ":=" and token_behind() not in token_splitters, ":=", "="),
+                         "fn": lambda:mod_replace(token == "fn" and token_front()\
+                                                  not in token_splitters, "fn", "def", lambda:linemod(")", "):"),
+                         "iterate": lambda:analyzed = analyzed.append(line.replace("over", "in").replace("iterate", "for")
+                        }
+            switch(line, inline_do)
+            
