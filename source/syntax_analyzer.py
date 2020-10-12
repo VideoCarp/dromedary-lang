@@ -15,6 +15,6 @@ for line in line_list:
                 before assignment. Define the variable with ':=', '=' is reserved for reassigning a value.")
             if token == "fn" and token_front() == kw or token == ":=" and token_front() == kw:
                 raise DeclaringError(f"Attempt to declare function or variable with name of a reserved keyword, '{kw}'\
-                at '{token}{token_front()}' in line {currentline()}.\ 
-                Consider renaming the variable or function to an unreserved keyword.")
+                at '{token}{token_front()}' in line {currentline()}.\
+                 Consider renaming the variable or function to an unreserved keyword.")
             
