@@ -64,18 +64,6 @@ def switch(expression, casevar: dict, returning=False):
             else:
                 v()
 
-# Tagging
-for kw in keyword_splitters:
-    cases = {kw: f"KEYWORD_{kw}", ":=": "DEFINE_VAR", "fn": "DEFINE_FUNCTION",
-                     "[": "ENTER_BRACKETS", "]": "EXIT_BRACKETS", "(": "ENTER_PARAN", ")": "EXIT_PARAN",
-                     "{": "ENTER_BRACES", "}": "EXIT_BRACES", ":": "COLON", "'": "STRING", '"': "STRING",
-                    }
-
-    tagged_tokens = switch(token, casevar=cases, returning=True)
-
-# tagged token.
-def tagged_get(dist=1):
-    return tagged_tokens[tagged_tokens.index(tagged_token)][dist]
 
 result = []
 def newsplitter(arg):
@@ -83,13 +71,10 @@ def newsplitter(arg):
 
 # Finishing up
 for line in line_list:
-    for space_token in space_tokenlist:
         for token in lex_token:
-            for tagged_token in tagged_tokens:
                 if str_token() == False:
-                    switching_cases = {"DEFINE_VAR": lambda:newsplitter(token_behind()),
-                                       "DEFINE_FUNCTION": lambda:newsplitter(token_front())
-                                      }
-                    switch(tagged_get(), casevar=switching_cases, returning=False)
+                    if token_behind() == "fn":
+                        token_splitters.append(token)
+                    if token_front() == ":=":
+                        token_splitters.append(token)
 
-print("\n".join(result))
