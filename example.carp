@@ -45,3 +45,16 @@ my_string = my_string.replace("...", "#...")
 
 my_integer := 1
 my_integer = my_integer * 2 # %, *, -, sqrt(my_integer), etc.
+
+# Examples:
+
+# Get even or Odd number.
+fn num_type(num)
+    if (num % 2 != 0):
+        return "odd"
+    else:
+        return "even"
+
+# Iteration
+cells := []
+iterate cell over cells:
