@@ -80,7 +80,7 @@ for line in line_list:
         for token in lex_token:
             for tagged_token in tagged_tokens:
                 if str_token() == False:
-                    switching_cases = {"DEFINE_VAR": lambda:newsplitter(token_behind())
+                    switching_cases = {"DEFINE_VAR": lambda:newsplitter(token_behind()),
                                        "DEFINE_FUNCTION": lambda:newsplitter(token_front())
                                       }
                     switch(tagged_get(), casevar=switching_cases, returning=False)
