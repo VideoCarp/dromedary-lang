@@ -29,6 +29,7 @@ for token_splitter in token_splitters:
     tok = toparse.replace(token_splitter, "TOKEN_SPLIT")
 lex_token = tok.split("TOKEN_SPLIT")
 
+# Functions
 def line_above(count=1):
     return line_list[line_list.index(line) + count]
 
@@ -53,6 +54,8 @@ def str_token():
         return True
     else:
         return False
+
+
 def switch(expression, casevar: dict, returning=False):
     for k,v in cases.items():
         if expression == k:
@@ -61,20 +64,24 @@ def switch(expression, casevar: dict, returning=False):
             else:
                 v()
 
-
+# Tagging
 for kw in keyword_splitters:
     cases = {kw: f"KEYWORD_{kw}", ":=": "DEFINE_VAR", "fn": "DEFINE_FUNCTION",
                      "[": "ENTER_BRACKETS", "]": "EXIT_BRACKETS", "(": "ENTER_PARAN", ")": "EXIT_PARAN",
                      "{": "ENTER_BRACES", "}": "EXIT_BRACES", ":": "COLON", "'": "STRING", '"': "STRING",
                     }
+
     tagged_tokens = switch(token, casevar=cases, returning=True)
 
+# tagged token.
 def tagged_get(dist=1):
     return tagged_tokens[tagged_tokens.index(tagged_token)][dist]
 
 result = []
 def newsplitter(arg):
     token_splitters.append(arg)
+
+# Finishing up
 for line in line_list:
     for space_token in space_tokenlist:
         for token in lex_token:
