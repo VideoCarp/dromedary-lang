@@ -1,60 +1,23 @@
-# This is the goal of the language's syntax structure.
-# Many changes could happen, this currently will not run.
-# This program is not meant to run, is rather a simple example guide.
-import "name"
 
-# Hello World!
-fn main()
-    print("Hello, World!")
+// This language wraps the C programming language.
 
-# Function definition. Separate new arguments with comma.
-fn example_func(arg)
-    print(arg)
-    return arg
+$include <stdio.h>
 
-# Comparison Operators:
-# != (not equal)
-# == (equal)
-# >= (greater than or equal to)
-# <= (smaller than or equal to)
-# > (greater than)
-# < (smaller than)
-if (...):
-    ...
+fn int main() { 
+    /*'int' is the return type. i.e string
+    In this case, it's `int`. */
 
-while (...):
-    ...
 
-for (...):
-    ...
+    print("Hello World!"); // Planning to not require semicolons.
 
-switch (...):
-    case ...:
-        ...
 
-my_array := [...] # comma separation.
-my_array[1]
+    // Variables
+    const PI := 3.14;
+    hello := "Hello";
+    myBoolean := true;
 
-my_dict := {
-    "...": "..."
+
+    if myBoolean == true {
+        print(hello);
+   }
 }
-my_dict.grab(key) # get value. else key: my_dict[key]
-
-my_string := "..."
-my_string = my_string.replace("...", "#...")
-
-my_integer := 1
-my_integer = my_integer * 2 # %, *, -, sqrt(my_integer), etc.
-
-# Examples:
-
-# Get even or Odd number.
-fn num_type(num)
-    if (num % 2 != 0):
-        return "odd"
-    else:
-        return "even"
-
-# Iteration
-cells := []
-iterate cell over cells:
