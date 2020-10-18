@@ -25,4 +25,17 @@ fn int main() {
         hello = "Hello World!";
         print(hello);
    }
+   while ... {} // Works as you'd expect, just like 'if'
+
+   i := 0;
+   num := 5;
+
+
+   // for loop.
+   for i; i < num; i++ {
+       print("I was printed 5 times.")
+   }
+   /* Structure of 'for' loop:
+   for count_variable; count_variable < amount_of_times; count_variable++ {}
+   */
 }
