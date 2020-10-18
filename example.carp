@@ -22,6 +22,7 @@ fn int main() {
 
 
     if myBoolean == true {
+        hello = "Hello World!";
         print(hello);
    }
 }
