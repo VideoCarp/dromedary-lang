@@ -3,6 +3,10 @@
 
 $include <stdio.h>
 
+fn int even(int num) {
+    return num % 2 == 0;
+}
+
 fn int main() { 
     /*'int' is the return type. i.e string
     In this case, it's `int`. */
