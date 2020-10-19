@@ -19,14 +19,18 @@ keyword_splitters = [
     "false", "true", "null", "pass", "fn"
 ]
 
+
+
 for ks in keyword_splitters:
     token_splitters.append(ks)
+
 for ss in symbol_splitters:
     token_splitters.append(ss)
 
 
 for token_splitter in token_splitters:
     tok = toparse.replace(token_splitter, "TOKEN_SPLIT")
+
 lex_token = tok.split("TOKEN_SPLIT")
 
 # Functions
@@ -74,7 +78,7 @@ for line in line_list:
         for token in lex_token:
                 if str_token() == False:
                     if token_behind() == "fn":
-                        token_splitters.append(token)
-                    if token_front() == ":=":
-                        token_splitters.append(token)
+                        newsplitter(token)
+                    elif token_front() == ":=":
+                        newsplitter(token)
 
