@@ -1,8 +1,8 @@
 # Wrap-Lang
 
-<div align="center"
-<img src="https://github.com/VideoCarp/wraplang/blob/main/files/63943150-45B9-440B-B2C2-3CBDB99C45D1.jpeg?raw=true" width=50 height=50>
-</div>
+<span align="center">
+<img src="https://github.com/VideoCarp/wraplang/blob/main/files/63943150-45B9-440B-B2C2-3CBDB99C45D1.jpeg?raw=true" width=250 height=250>
+</span>
                                                                                                                                       
 In-progress compiled language.
 
