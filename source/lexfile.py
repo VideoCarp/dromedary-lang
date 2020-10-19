@@ -1,5 +1,7 @@
 # This may later change to a different language.
-toparse = ""
+toparse = """
+[]()
+""".replace("\n", "")
 line_list = toparse.split("\n")
 space_tokenlist = toparse.split(" ")
 
@@ -27,11 +29,10 @@ for ks in keyword_splitters:
 for ss in symbol_splitters:
     token_splitters.append(ss)
 
-
 for token_splitter in token_splitters:
     tok = toparse.replace(token_splitter, "TOKEN_SPLIT")
+    lex_token = tok.split("TOKEN_SPLIT")
 
-lex_token = tok.split("TOKEN_SPLIT")
 
 # Functions
 def line_above(count=1):
@@ -76,9 +77,18 @@ def newsplitter(arg):
 # Finishing up
 for line in line_list:
         for token in lex_token:
+            if lex_token.index(token) > len(lex_token):
                 if str_token() == False:
                     if token_behind() == "fn":
                         newsplitter(token)
                     elif token_front() == ":=":
                         newsplitter(token)
 
+
+for token_splitter in token_splitters:
+    tok = toparse.replace(token_splitter, "TOKEN_SPLIT")
+lex_token = tok.split("TOKEN_SPLIT")
+# TODO : Fix issue of 'replace' above doing quite literally
+# nothing.
+print(tok)
+print(lex_token)
