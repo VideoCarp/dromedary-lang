@@ -2,11 +2,11 @@
 from functions import *
 toparse = """
 []()
-""".replace("\n", "")
+"""
 line_list = toparse.split("\n")
 space_tokenlist = toparse.split(" ")
 
-token_splitters = []
+token_splitters = ["\n"]
 
 # Unclear, or not fully/easily visible will be commented.
 symbol_splitters = [
