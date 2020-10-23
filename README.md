@@ -1,7 +1,7 @@
 # Wrap-Lang
 
 <div align="center">
-    <img src="https://github.com/VideoCarp/wraplang/blob/main/files/63943150-45B9-440B-B2C2-3CBDB99C45D1.jpeg?raw=true" width=250 height=250><br>
+    <img src="https://github.com/VideoCarp/dromedary-lang/blob/main/files/1498B073-7C4E-48E5-BC42-1B3968053214.jpeg" width=250 height=250><br>
   <a href="https://discord.gg/PhES3kc">Join the discord!</a>
   
 </div>
