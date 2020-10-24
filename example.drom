@@ -1,0 +1,45 @@
+function main() { # declare a function.
+    # Note that other functions need to be on top of 'main'.
+    # Dynamically typed.
+    print("Hello, World!") # printing. # is used for comments.
+    myArray := [1,2,3,4,5] # 'dromedaryCase' is the recommended style (aka camelCase.)
+    
+    # Use := to initialize a variable. To reassign, use '=' alone.
+    
+    for number in myArray { # Use braces.
+         print(number) # easily count to 5
+    } 
+    
+    myBoolean := true # yes/no are also aliases for boolean. true/false are recommended, however.
+    
+    if myBoolean == true {
+        print("myBoolean is <string>", string(myBoolean)) 
+        # String interpolation. '<string>' is equivalent to '%s' in C.
+    }
+    # Length:
+    length(array)
+    length(string) 
+    #etc
+    
+    # Random:
+    random(from, to) # gives integer, not float.
+    
+    # Math:
+    x % y # modulo for remainder.
+    x + y # addition
+    x / y # division
+    x - y # subtraction
+    x * y # multiplication
+    sqrt(x) # square root
+    
+    # Comparison operators:
+    # The standard ones.
+    == # equals
+    != # not equal
+    ~= # alias for equal. will be an approximate comparison later.
+    > # greater than
+    < # less than
+    >= # greater or equal
+    <= # less than or equal to
+    
+}
