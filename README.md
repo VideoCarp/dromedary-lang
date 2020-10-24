@@ -7,7 +7,7 @@
 </div>
                                                                                                                                       
 In-progress compiled language.<br>
-This language is aimed at simplicity.
+This language is aimed at mostly performance, but also simplicity.
 
 Currently read-only unless contributing or testing, completely unready.
 Do not use any of the files in this repository elsewhere.
