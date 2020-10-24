@@ -13,3 +13,9 @@ Currently read-only unless contributing or testing, completely unready.
 Do not use any of the files in this repository elsewhere.
 
 Both the lexer and syntax analyzer are unfinished.
+
+Notices:<br>
+* Lexer needs an update.
+It's checking whitespace, we wouldn't want that later, this is just for testing right now.
+* The language is a work in progress.
+Currently does not run.
