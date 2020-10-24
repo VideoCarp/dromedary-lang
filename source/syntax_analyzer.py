@@ -1,4 +1,4 @@
-# This may later be written in a different language.
+#Unused rn
 from lexfile import *
 from functions import *
 analyzed = []
