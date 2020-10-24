@@ -1,3 +1,9 @@
+
+#*
+   I need to rewrite this later.
+*#
+
+
 function main() { # declare a function.
     # Note that other functions need to be on top of 'main'.
     # Dynamically typed.
