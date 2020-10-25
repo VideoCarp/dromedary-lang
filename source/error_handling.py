@@ -10,6 +10,7 @@ class colors:
     underlined = '\033[4m'
     gray = '\u001b[30;1m'
 
-#print(f"{colors.COLOR}Hi{colors.END}")
+#print(f"{colors.color}Hi{colors.end}")
 
-
+def send(clr, args):
+    print(f"{clr}{args}{colors.end}")
