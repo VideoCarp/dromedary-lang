@@ -2,6 +2,7 @@
 
 int main() { # declare a function.
     
+    # 'int' is the value that gets returned.
     # Static functions.
     
     # Static variables.
@@ -60,5 +61,7 @@ int main() { # declare a function.
     < # less than
     >= # greater or equal
     <= # less than or equal to
+    
+    return 0
     
 }
