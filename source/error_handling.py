@@ -12,5 +12,5 @@ class colors:
 
 #print(f"{colors.color}Hi{colors.end}")
 
-def send(clr, args):
+def send(args,clr=colors.error):
     print(f"{clr}{args}{colors.end}")
