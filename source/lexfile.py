@@ -82,4 +82,6 @@ for k,v in Lexicon.FUNCTIONS.items():
             lexed[location] = (word,k)
 
 
+lexed = [value for value in lexed if value != '']
+# This just removes all empty tokens that were used to bypass index errors, or any useless tokens.
 print(lexed)
