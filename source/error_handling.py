@@ -14,3 +14,5 @@ class colors:
 
 def send(args,clr=colors.error):
     print(f"{clr}{args}{colors.end}")
+
+#send("message", colors.color")
