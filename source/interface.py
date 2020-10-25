@@ -1,3 +1,4 @@
+import lexfile as lexical
 class Colors:
     header = '\033[95m'
     blue = '\033[94m'
@@ -24,6 +25,4 @@ file = input()
 
 
 with open(file, "r") as f:
-    print("Entering lexical analysis.")
-    import lexfile
-    lexfile.data = f.read()
+    lexical.analyze(f.read())
