@@ -6,7 +6,10 @@ int main() { # declare a function.
     
     # Static variables.
     str myString[] := "Hello, world!"
-    # `dromedaryCase` is the naming style, aka `camelCase` (which is not `PascalCase`)
+    #*
+        `dromedaryCase` is the naming style, aka `camelCase` (which is not `PascalCase`)
+        Why? the language's name is dromedary-lang so it just makes more sense.
+    *#
     
     # Semicolons might or might not be required later, but they probably won't.
     #* 
