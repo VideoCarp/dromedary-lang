@@ -22,6 +22,8 @@ send("Dromedary Language Compiler", Colors.bold)
 print(f"Type a {Colors.warning}path{colors.end} to a script to compile it.",end='')
 file = input()
 
-lexfile.data = ""
+
 with open(file, "r") as f:
+    print("Entering lexical analysis.")
+    import lexfile
     lexfile.data = f.read()
