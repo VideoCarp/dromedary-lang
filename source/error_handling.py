@@ -9,7 +9,6 @@ class colors:
     bold = '\033[1m'
     underlined = '\033[4m'
 
-#print(f"{colors.COLOR}Hi{colors.ENDC}")
+#print(f"{colors.COLOR}Hi{colors.END}")
 
-def err_send(color=error,args):
-    print(f"{colors.color}{args}{colors.end})
+
