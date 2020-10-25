@@ -8,6 +8,7 @@ class colors:
     end = '\033[0m'
     bold = '\033[1m'
     underlined = '\033[4m'
+    gray = '\u001b[30;1m'
 
 #print(f"{colors.COLOR}Hi{colors.END}")
 
