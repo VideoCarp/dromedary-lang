@@ -1,27 +1,38 @@
 
-#*
-   I need to rewrite this later.
-*#
 
-
-function main() { # declare a function.
-    # Note that other functions need to be on top of 'main'.
-    # Dynamically typed.
-    print("Hello, World!") # printing. # is used for comments.
-    myArray := [1,2,3,4,5] # 'dromedaryCase' is the recommended style (aka camelCase.)
+int main() { # declare a function.
     
-    # Use := to initialize a variable. To reassign, use '=' alone.
+    # Static functions.
     
-    for number in myArray { # Use braces.
-         print(number) # easily count to 5
-    } 
+    # Static variables.
+    str myString[] := "Hello, world!"
+    # `dromedaryCase` is the naming style, aka `camelCase` (which is not `PascalCase`)
     
-    myBoolean := true # yes/no are also aliases for boolean. true/false are recommended, however.
+    # Semicolons might or might not be required later, but they probably won't.
+    #* 
+         Note the `[]`. We need to have that.
+         We won't need that in future releases, but for the first release we do.
+         'str' in this case will be translated to 'char'.
+         This is just to make the code a little bit more readable.
+         `char myString[] := "Hello, world!"` would have worked too.
+         `:=` is used for assignment, use only `=` for reassignment.
+    *#
     
-    if myBoolean == true {
-        print("myBoolean is <string>", string(myBoolean)) 
-        # String interpolation. '<string>' is equivalent to '%s' in C.
+    bool printOrNot := true
+    if (printOrNot == true) {
+      print("") # Print automatically adds a newline, so this does print.
     }
+    while (...) {...}
+    for (statement 1; statement2; statement3) {...}
+    
+    #*
+      `for` Structure:
+      
+      `for (int count := 0; count < amount; ++count) {...}
+      'count' is the integer or the number it's going over.
+      'amount' is the range.
+   *#
+    
     # Length:
     length(array)
     length(string) 
@@ -42,7 +53,6 @@ function main() { # declare a function.
     # The standard ones.
     == # equals
     != # not equal
-    ~= # alias for equal. will be an approximate comparison later.
     > # greater than
     < # less than
     >= # greater or equal
