@@ -1,6 +1,5 @@
-
 data = r"""
-
+{{{}}}
 """
 result = []
 lexed = []
@@ -54,7 +53,7 @@ class Lexicon:
 # FIX : doesn't work with more than one char.
 # Hopefully fixed the issue of only finding one match
 for k,v in Lexicon.SYMBOLS.items():
-    for char_index in range(len(data)):
+    for char_index in range(len(data) - 1):
         char = data[char_index]
         if char == k:
            for i in range(char_index + 1):
@@ -66,7 +65,7 @@ for k,v in Lexicon.SYMBOLS.items():
 
 #FIX : only finds one word.
 for k,v in Lexicon.KEYWORDS.items():
-    for word_index in range(len(datawords)):
+    for word_index in range(len(datawords) - 1):
         word = datawords[word_index]
         if word == k:
             for i in range(word_index):
@@ -75,11 +74,11 @@ for k,v in Lexicon.KEYWORDS.items():
 
 #FIX : only finds one word
 for k,v in Lexicon.FUNCTIONS.items():
-    for word_index in range(len(datawords)):
+    for word_index in range(len(datawords) - 1):
         word = datawords[word_index]
-            for i in range(word_index):
-                lexed.append('')
-            lexed[word_index] = (word,k)
+        for i in range(word_index):
+            lexed.append('')
+        lexed[word_index] = (word,k)
 
 
 lexed = [value for value in lexed if value != '']
