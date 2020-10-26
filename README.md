@@ -15,7 +15,17 @@ Do not use any of the files in this repository elsewhere.
 Both the lexer and syntax analyzer are unfinished.
 
 Notices:<br>
-* Lexer needs an update.
-It's checking whitespace, we wouldn't want that later, this is just for testing right now.
 * The language is a work in progress.
 Currently does not run.
+* The language works on a 'word' system.
+This means it's whitespace sensitive.<br>
+Anything more than 1 character, including symbols needs to be separated by whitespace.<br>
+```drom
+# example
+int x = 2
+if (x>=1) { # Error!
+   println("x is greater than or equal to 1")
+}
+# instead, use
+if (x >= 1) {...}
+```
