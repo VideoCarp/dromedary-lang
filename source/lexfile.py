@@ -52,34 +52,34 @@ class Lexicon:
 
 
 # FIX : doesn't work with more than one char.
+# Hopefully fixed the issue of only finding one match
 for k,v in Lexicon.SYMBOLS.items():
-    for char in data:
+    for char_index in range(len(data)):
+        char = data[char_index]
         if char == k:
-           location = data.index(char)
-           for i in range(location + 1):
+           for i in range(char_index + 1):
                lexed.append('')
-           lexed[location] = (char,v)
+           lexed[char_index] = (char,v)
 
 
 
 
 #FIX : only finds one word.
 for k,v in Lexicon.KEYWORDS.items():
-    for word in datawords:
+    for word_index in range(len(datawords)):
+        word = datawords[word_index]
         if word == k:
-            location = datawords.index(word)
-            for i in range(location):
+            for i in range(word_index):
                 lexed.append('')
-            lexed[location] = (word,k)
+            lexed[word_index] = (word,k)
 
 #FIX : only finds one word
 for k,v in Lexicon.FUNCTIONS.items():
-    for word in datawords:
-        if word == k:
-            location = datawords.index(word)
-            for i in range(location):
+    for word_index in range(len(datawords)):
+        word = datawords[word_index]
+            for i in range(word_index):
                 lexed.append('')
-            lexed[location] = (word,k)
+            lexed[word_index] = (word,k)
 
 
 lexed = [value for value in lexed if value != '']
