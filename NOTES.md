@@ -1,4 +1,6 @@
 This is a file for TODOs, fixes, and notes.
 
 Note:<br>
-Delete all empty tokens (value is `''`) while parsing to AST.<br>
+**Never** use normal `for in` with `index(tok)`.<br>
+Always use `for count in range(len(list))` to access proper index location.<br>
+
