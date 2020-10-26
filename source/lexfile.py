@@ -1,6 +1,7 @@
 def analyze(toparse=None):
     if toparse is None:
        raise Exception("Lexer did not get enough info.")
+    print("Successfully entered lexical analyzer.")
     data = toparse
     result = []
     lexed = []
@@ -52,7 +53,6 @@ def analyze(toparse=None):
     
     
     # FIX : doesn't work with more than one char.
-    # Hopefully fixed the issue of only finding one match
     for k,v in Lexicon.SYMBOLS.items():
         for char_index in range(len(data) - 1):
             char = data[char_index]
@@ -64,7 +64,7 @@ def analyze(toparse=None):
     
     
     
-    #FIX : only finds one word.
+    #FIX : provides incorrect tag.
     for k,v in Lexicon.KEYWORDS.items():
         for word_index in range(len(datawords) - 1):
             word = datawords[word_index]
@@ -73,7 +73,7 @@ def analyze(toparse=None):
                     lexed.append('')
                 lexed[word_index] = (word,v)
     
-    #FIX : only finds one word
+    #FIX : provides incorrect tag.
     for k,v in Lexicon.FUNCTIONS.items():
         for word_index in range(len(datawords) - 1):
             word = datawords[word_index]
