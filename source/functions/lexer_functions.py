@@ -4,25 +4,12 @@ def line_above(count=1):
 def line_below(count=1):
     return line_list[line_list.index(line) - count]
 
+
 def token_front(count=1):
-    return space_tokenlist[space_tokenlist.index(space_token) + count]
+    return lexed[token_index + count]
 
 def token_behind(count=1):
-    return space_tokenlist[space_tokenlist.index(space_token) - count]
-
-"""
-def token_front(count=1):
-    return lex_token[lex_token.index(token) + count].replace(" ", "")
-
-def token_behind(count=1):
-    return lex_token[lex_token.index(token) - count].replace(" ", "")
-"""
-def str_token():
-    return_value = False
-    if token == '"' or token == "'": 
-        return True
-    else:
-        return False
+    return lexed[token_index - count]
 
 
 def switch(expression, casevar: dict, returning=False):
@@ -35,3 +22,6 @@ def switch(expression, casevar: dict, returning=False):
 
 def newsplitter(arg):
     token_splitters.append(arg)
+
+def find_second(string, substring):
+   return string.find(substring, string.find(substring) + 1)
