@@ -4,7 +4,7 @@ def analyze(toparse=None):
     if toparse is None or toparse.replace(" ", "") == "":
        raise Exception("Lexer did not get enough info.")
     print("Successfully entered lexical analyzer.")
-    toparse = toparse.replace("	", "")
+    toparse = toparse.replace("	", "  ") # tab
     GSUB = {}
     with open("config.json") as f:
         GSUB = json.loads(f.read())
