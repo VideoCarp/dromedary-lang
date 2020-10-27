@@ -29,3 +29,41 @@ if (x>=1) { # Error!
 # instead, use
 if (x >= 1) {...}
 ```
+
+# Features
+Here are some features that will be implemented in this lang:<br>
+* Easy interoperation with C by typing `#interop` in the line.
+Example:
+```drom
+int main() {
+    char msg[] = "Hello World!"; #interop
+    printf("%s", msg); #interop
+}
+```
+* Syntactic aliasing, this means users can define global substitutes using a config format.
+Example:
+```drom
+int main() stack
+    string hello = "Hello World!"
+    if (true) do
+       println(hello)
+    end
+end
+```
+would be done by using the syntax alias sheet:
+```json
+{
+  " stack\n": " {",
+  " do\n": " {",
+  "end\n": "}"
+}
+```
+* Standard libraries
+Planning to include standard libraries, i.e one of them is 'graphics'.<br>
+Example:
+```drom
+import <graphics>
+int main() {
+   graphics.draw(x,y,color)
+}
+```
