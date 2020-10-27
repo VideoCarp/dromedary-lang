@@ -1,8 +1,8 @@
 def line_above(count=1):
-    return line_list[line_list.index(line) + count]
+    return line_list[line_index + count]
 
 def line_below(count=1):
-    return line_list[line_list.index(line) - count]
+    return lines[line_index - count]
 
 
 def token_front(count=1):
