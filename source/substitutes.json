@@ -1,3 +1,6 @@
+/* Type a key here, which will get substituted by the value.
+i.e:
 {
-   "comment": "type a key, which will be substituted by the value"
+   "k":"v"
 }
+*/
