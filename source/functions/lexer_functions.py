@@ -20,8 +20,6 @@ def switch(expression, casevar: dict, returning=False):
             else:
                 v()
 
-def newsplitter(arg):
-    token_splitters.append(arg)
 
 def find_second(string, substring):
    return string.find(substring, string.find(substring) + 1)
