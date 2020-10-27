@@ -95,4 +95,4 @@ if errors != []:
     for error in errors:
         print(f"{colors.bold}{'_' * 15}")
         print(error)
-    raise compiler("errors encountered.")
+    raise compiler(f"{len(errors)} generated.")
