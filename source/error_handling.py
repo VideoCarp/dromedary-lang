@@ -22,6 +22,7 @@ def send_error(text, clr=colors.error):
     errors.append(f"""at {line}
     {clr}dromedary, line {line_index}: {text}
     """)
+result = []
 def handle(lexdata, linelist):
     lexed = lexdata
     lines = linelist
@@ -29,13 +30,17 @@ def handle(lexdata, linelist):
         for line_index in range(len(lines) - 1):
             token = lexed[token_index]
             line = lines[line_index]
-
-            print("Entering error handling...")
-            if token == "=" and any_in(typelist):
-                identifiers[token_front()] = token_behind(2)
-            elif token == "=" and not any_in(typelist) and token_behind() not in typelist:
-                send_error(f"attempt to reassign undefined '{token_behind()}'")
-            if token == "(" and any_in(typelist, False, 2):
-                identifiers[token_behind(1)] = token_behind(2)
-            if token == "(" and token_behind() not in identifiers:
-                send_error(f"undefined function '{token_behind()')
+            
+            if token_index + 2 < len(lexed):
+                print("Entering error handling...")
+                if "#interop" not in line:
+                    if token == "=" and any_in(typelist):
+                        identifiers[token_front()] = token_behind(2)
+                    elif token == "=" and not any_in(typelist) and token_behind() not in typelist:
+                        send_error(f"attempt to reassign undefined '{token_behind()}'")
+                    if token == "(" and any_in(typelist, False, 2):
+                        identifiers[token_behind(1)] = token_behind(2)
+                    if token == "(" and token_behind() not in identifiers:
+                        send_error(f"undefined function '{token_behind()')
+                else:
+                    result.append(line)
