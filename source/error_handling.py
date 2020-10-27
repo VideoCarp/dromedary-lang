@@ -2,7 +2,30 @@ from functions import color_collection
 from functions import lexer_functions
 
 #print(f"{colors.color}Hi{colors.end}")
-
+KEY_WORDS = [
+    "break", 
+    "case", 
+    "char", 
+    "continue", 
+    "do", 
+    "default", 
+    "double", 
+    "else", 
+    "enum", 
+    "extern", 
+    "for", 
+    "if", 
+    "goto", 
+    "float", 
+    "int", 
+    "long", 
+    "register", 
+    "return", 
+    "static", 
+    "switch", 
+    "void", 
+    "while", 
+]
 def any_in(args, inornot=True, c=1):
     if inornot == True:
         for each in args:
@@ -17,10 +40,13 @@ typelist = ["int", "string", "char", "double", "float", "long"]
 #send("message", colors.color")
 
 identifiers = {}
+for item in KEY_WORDS:
+    identifiers[item] = "keyword"
+
 errors = []
 def send_error(text, clr=colors.error):
     errors.append(f"""at {line}
-    {clr}dromedary, line {line_index}: {text}
+    {colors.bold}dromedary, line {line_index}:{colors.end}{clr}{text}
     """)
 result = []
 def handle(lexdata, linelist):
@@ -41,6 +67,16 @@ def handle(lexdata, linelist):
                     if token == "(" and any_in(typelist, False, 2):
                         identifiers[token_behind(1)] = token_behind(2)
                     if token == "(" and token_behind() not in identifiers:
-                        send_error(f"undefined function '{token_behind()')
+                        send_error(f"undefined function '{token_behind()}'")
+                    if token not in identifiers:
+                        send_error(f"cannot understand token '{token}'. possibly undefined")
                 else:
                     result.append(line)
+
+class compiler(Exception):
+    pass
+if errors != []:
+    for error in errors:
+        print(f"{colors.bold}{'_' * 15}")
+        print(error)
+    raise compiler("errors encountered.")
