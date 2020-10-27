@@ -1,8 +1,18 @@
 def analyze(toparse=None):
-    if toparse is None:
+    if toparse is None or toparse == "":
        raise Exception("Lexer did not get enough info.")
     print("Successfully entered lexical analyzer.")
     data = toparse
+    GSUB = {}
+    print("Going through substitues sheet...")
+    try:
+        with open("substitutes.json", "r") as f:
+            GSUB = json.loads(f.read())
+        for k,v in GSUB.items():
+            data = data.replace(k,v)
+        print("Went through substitues sheet.")
+    except:
+        print("Failed to use global substitues. May be empty..")
     result = []
     lexed = []
     lexdata = []
