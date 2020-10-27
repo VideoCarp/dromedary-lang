@@ -22,7 +22,7 @@ int main() { # declare a function.
          `:=` is used for assignment, use only `=` for reassignment.
     *#
     
-    bool printOrNot := true
+    bool printOrNot = true
     if (printOrNot == true) {
       print("") # Print automatically adds a newline, so this does print.
     }
