@@ -1,4 +1,0 @@
-Usage of this software is allowed, including commercially, privately, and private modification.
-Usage of any file from this repository elsewhere is disallowed.
-
-Anything not mentioned is disallowed, unapproved, and the contributors will not be responsible for.
