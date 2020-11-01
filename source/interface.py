@@ -17,5 +17,5 @@ file = input()
 # send 'data' variable
 with open(file, "r") as f:
       colors.send("Sending data to lexical analyzer...", colors.green)
-      lexer.run(f.read())
+      lexer.analyze(f.read())
 
