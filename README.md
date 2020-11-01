@@ -67,3 +67,8 @@ int main() {
    graphics.draw(x,y,color)
 }
 ```
+# Progression
+- [x] Lexer
+- [ ] Error Handling (being worked on)
+- [ ] Syntax analysis
+- [ ] Code generation
