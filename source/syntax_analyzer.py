@@ -4,4 +4,9 @@ def run(lexed: list, lines: list) -> str:
         for line_index in range(len(lines) - 1):
             token: str = lexed[token_index]
             line: str = lines[line_index]
-            pass
+                if "#interop" not in line:
+                    if line.find("#") >= 0:
+                        line = line[:line.find("#")]
+                    if line.replace(" ", "").endswith("{") == False and line.replace(" ", "").endswith("}") == False:
+                        lines[line_index] = f"{line};"
+           
