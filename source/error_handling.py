@@ -1,3 +1,4 @@
+'''
 from functions import color_collection
 from functions import lexer_functions
 
@@ -96,3 +97,4 @@ if errors != []:
         print(f"{colors.bold}{'_' * 15}")
         print(error)
     raise compiler(f"{len(errors)} generated.")
+'''
