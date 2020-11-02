@@ -69,6 +69,6 @@ int main() {
 ```
 # Progression
 - [x] Lexer
-- [ ] Error Handling (being worked on)
-- [ ] Syntax analysis
+- [ ] Error Handling 
+- [ ] Syntax analysis (being worked on)
 - [ ] Code generation
