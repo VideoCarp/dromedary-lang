@@ -1,3 +1,5 @@
+from functions import *
+from functions import varcollection as cat # category
 def run(lexed: list, lines: list) -> str:
     print("Entered syntax analyzer.")
     for token_index in range(len(lexed) - 1):
@@ -9,4 +11,3 @@ def run(lexed: list, lines: list) -> str:
                         line = line[:line.find("#")]
                     if line.replace(" ", "").endswith("{") == False and line.replace(" ", "").endswith("}") == False:
                         lines[line_index] = f"{line};"
-           
