@@ -68,7 +68,7 @@ int main() {
 }
 ```
 # Progression
-- [x] Lexer
+- [x] Lexer (will be rewritten COMPLETELY to speed up, no regex nor splits will be used.)
 - [ ] Error Handling 
 - [ ] Syntax analysis (being worked on)
 - [ ] Code generation
