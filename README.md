@@ -8,6 +8,9 @@
                                                                                                                                       
 In-progress compiled language.<br>
 This language is aimed at mostly performance, but also simplicity.
+# Alert!
+I'm rewriting this entire language, the syntax is getting changed, it won't compile to C, and it will be properly done.<br>
+It will also be much, much faster.
 
 Currently read-only unless contributing or testing, completely unready.
 Do not use any of the files in this repository elsewhere.
